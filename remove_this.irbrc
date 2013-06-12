@@ -26,4 +26,4 @@ def clear
   system('clear')
 end
 
-puts ("Welcome to Ruby Console Topher")
+puts ("Welcome to Ruby Console User")
