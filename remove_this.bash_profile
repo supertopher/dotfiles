@@ -28,6 +28,4 @@ git_prompt ()
  # Add RVM to PATH for scripting
 PROMPT_COMMAND='PS1="${c_path}\W${c_reset}$(git_prompt) :> "'
 # export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]:> '
-echo "Welcome Back Topher :)"
-
-fish
+echo "Welcome Back Friend :)"
