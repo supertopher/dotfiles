@@ -1,0 +1,7 @@
+[
+{ "keys": ["ctrl+shift+."], "command": "erb" },
+  // Syntax Change
+  {"keys": ["super+shift+r"], "command": "set_file_type",
+     "args": {"syntax": "Packages/Ruby/Ruby.tmLanguage"}
+}
+]
