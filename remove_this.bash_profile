@@ -1,4 +1,6 @@
+echo "Loading .bash_profile"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# commented out in case you don't have these
 # source ~/.git-completion.bash
 # source ~/.git-prompt.sh
 PATH=$PATH:$HOME/.rvm/bin
@@ -9,6 +11,11 @@ c_reset='\[\e[0m\]'
 c_path='\[\e[0;31m\]'
 c_git_clean='\[\e[0;32m\]'
 c_git_dirty='\[\e[0;31m\]'
+
+PROMPT_COMMAND='PS1="${c_path}\W${c_reset}$(git_prompt) :> "'
+
+export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]:> '
+echo "Welcome Back Topher :)"
 
 git_prompt ()
 {
@@ -24,8 +31,13 @@ git_prompt ()
   echo " [$git_color$git_branch${c_reset}]"
 }
 
+function pgstart {
+  pg_ctl -l $PGDATA/logfile start
+}
 
- # Add RVM to PATH for scripting
-PROMPT_COMMAND='PS1="${c_path}\W${c_reset}$(git_prompt) :> "'
-# export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]:> '
-echo "Welcome Back Friend :)"
+function pgstop {
+  pg_ctl stop
+}
+
+# runs my fish terminal... obviously not needed for most of your
+# fish
