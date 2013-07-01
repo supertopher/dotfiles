@@ -3,14 +3,14 @@ dotfiles
 
 These are a collection of dotfiles.
 
-+Everything that says remove me goes in your home directory as .FILE_NAME_HERE
++ Everything that says remove me goes in your home directory as .FILE_NAME_HERE
 
-+These settings are the way i like thing.
++ These settings are the way i like thing.
 
-+They are meant as a reference to setting up your computer the way you like it.
++ They are meant as a reference to setting up your computer the way you like it.
 
-+Fish configs are relative to user home
++ Fish configs are relative to user home
 
-+please feel free to tell me if you think i can be doing something better than i am
++ Please feel free to tell me if you think i can be doing something better than i am
 
 Chris
