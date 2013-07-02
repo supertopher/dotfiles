@@ -3,9 +3,8 @@
   // Syntax Change
   {"keys": ["super+shift+r"], "command": "set_file_type",
      "args": {"syntax": "Packages/Ruby/Ruby.tmLanguage"}
-}
-]
-[
+},
+<!-- these keys are james's shortcuts for setting color theme -->
 { "keys": ["ctrl+alt+super+b"], "command": "set_setting", "args":
     {
       "setting": "color_scheme",
@@ -16,4 +15,7 @@
       "setting": "color_scheme",
       "value": "Packages/Color Scheme - Default/Solarized (Light).tmTheme"
     } }
+
 ]
+
+
