@@ -38,4 +38,8 @@ function pgstart {
 function pgstop {
   pg_ctl stop
 }
+# export PGDATA="/Users/topher/.pgdata"
+# or export PGDATA="~/.pgdata"
+# note untested
+# If the -D option is omitted, the environment variable PGDATA is used.
 
