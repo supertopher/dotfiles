@@ -1,0 +1,26 @@
+[user]
+  name = ENTER_NAME_HERE
+  email = ENTER_EMAIL_HERE
+[credential]
+  helper = osxkeychain
+[core]
+  editor = subl -w
+  excludesfile = ~/.gitignore_global
+[color]
+  status = auto
+  diff = auto
+[color "status"]
+  untracked = cyan
+  changed = green
+  added = yellow
+[alias]
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[mergetool "sublime"]
+  cmd = subl -w $MERGED
+  trustExitCode = false
+[merge]
+  tool = sublime
+[push]
+  default = simple
