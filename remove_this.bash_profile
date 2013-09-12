@@ -1,9 +1,18 @@
-echo "Loading .bash_profile"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# commented out in case you don't have these
+echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
+
+# chruby source and auto-select ruby by .ruby-version file below
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+# set current version of ruby
+chruby 1.9.3-p448
+echo "Ruby Version 1.9.3-p448 loaded via chruby"
+# RVM below (i suggest chruby over RVM because it is slimmer and installs dependencies)
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# PATH=$PATH:$HOME/.rvm/bin
+
+# git completion (commented out in case you don't have these)
 # source ~/.git-completion.bash
 # source ~/.git-prompt.sh
-PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 ### Set up overhead for git branch
@@ -31,15 +40,13 @@ git_prompt ()
   echo " [$git_color$git_branch${c_reset}]"
 }
 
+# Add postgres to autostart with this line from console
+# ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+
 function pgstart {
-  pg_ctl -l $PGDATA/logfile start
+  pg_ctl -D /usr/local/var/postgres -l logfile start
 }
 
 function pgstop {
-  pg_ctl stop
+  pg_ctl -D /usr/local/var/postgres stop
 }
-# export PGDATA="/Users/topher/.pgdata"
-# or export PGDATA="~/.pgdata"
-# note untested
-# If the -D option is omitted, the environment variable PGDATA is used.
-
