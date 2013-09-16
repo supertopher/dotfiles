@@ -1,6 +1,3 @@
-[user]
-  name = ENTER_NAME_HERE
-  email = ENTER_EMAIL_HERE
 [credential]
   helper = osxkeychain
 [core]
