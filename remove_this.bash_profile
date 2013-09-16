@@ -41,6 +41,7 @@ git_prompt ()
 }
 
 # DBC SF cleanup scripts
+# comment that out if you aren't using it
 source .sfcleanup
 
 # Add postgres to autostart with this line from console
