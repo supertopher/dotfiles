@@ -40,6 +40,9 @@ git_prompt ()
   echo " [$git_color$git_branch${c_reset}]"
 }
 
+# DBC SF cleanup scripts
+source .sfcleanup
+
 # Add postgres to autostart with this line from console
 # ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 
