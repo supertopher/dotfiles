@@ -1,14 +1,14 @@
 echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
 
 # chruby source and auto-select ruby by .ruby-version file below
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+# source /usr/local/opt/chruby/share/chruby/chruby.sh
+# source /usr/local/opt/chruby/share/chruby/auto.sh
 # set current version of ruby
-chruby 1.9.3-p448
-echo "Ruby Version 1.9.3-p448 loaded via chruby"
+# chruby 1.9.3-p448
+# echo "Ruby Version 1.9.3-p448 loaded via chruby"
 # RVM below (i suggest chruby over RVM because it is slimmer and installs dependencies)
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# PATH=$PATH:$HOME/.rvm/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+PATH=$PATH:$HOME/.rvm/bin
 
 # git completion (commented out in case you don't have these)
 # source ~/.git-completion.bash
