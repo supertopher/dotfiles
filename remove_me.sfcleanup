@@ -23,4 +23,6 @@ function resetdotfiles {
   eget https://raw.github.com/supertopher/dotfiles/master/remove_me.gitconfig --output-document=~/.gitconfig
   echo "Downloading and replaceing .irbrc"
   wget https://raw.github.com/supertopher/dotfiles/master/remove_this.irbrc --output-document=~/.irbrc
+  echo "Reloading this maintenance file"
+  wget https://raw.github.com/supertopher/dotfiles/master/remove_this.irbrc --output-document=~/.sfcleanup
 }
