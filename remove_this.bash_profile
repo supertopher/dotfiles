@@ -1,11 +1,5 @@
 echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
 
-# chruby source and auto-select ruby by .ruby-version file below
-# source /usr/local/opt/chruby/share/chruby/chruby.sh
-# source /usr/local/opt/chruby/share/chruby/auto.sh
-# set current version of ruby
-# chruby 1.9.3-p448
-# echo "Ruby Version 1.9.3-p448 loaded via chruby"
 # RVM below (i suggest chruby over RVM because it is slimmer and installs dependencies)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 PATH=$PATH:$HOME/.rvm/bin
@@ -15,6 +9,7 @@ PATH=$PATH:$HOME/.rvm/bin
 # source ~/.git-prompt.sh
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
+
 ### Set up overhead for git branch
 c_reset='\[\e[0m\]'
 c_path='\[\e[0;31m\]'
