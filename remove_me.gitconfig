@@ -1,5 +1,3 @@
-[credential]
-  helper = osxkeychain
 [core]
   editor = subl -w
   excludesfile = ~/.gitignore_global
