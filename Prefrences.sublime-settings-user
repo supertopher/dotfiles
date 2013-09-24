@@ -39,7 +39,6 @@
     ".bundle",
     "bundle",
     ".rbx",
-    "bin",
     "script",
     "tmp",
     "log"
