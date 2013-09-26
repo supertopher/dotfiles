@@ -66,3 +66,16 @@ function pgstart {
 function pgstop {
   pg_ctl -D /usr/local/var/postgres stop
 }
+
+
+# Colors ls should use for folders, files, symlinks etc, see `man ls` and
+# search for LSCOLORS
+export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
+# Force ls to use colors (G) and use humanized file sizes (h)
+alias ls='ls -Gh'
+
+# ---
+
+# Useful aliases
+
+alias e=subl
