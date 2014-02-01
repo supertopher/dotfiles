@@ -3,26 +3,29 @@ echo "Loading ~/.bash_profile a shell script that runs in every new terminal you
 # $VARIABLE will render before the rest of the command is executed
 echo "Logged in as $USER at $(hostname)"
 
-# RVM scripts below
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # Path for RVM
-PATH=$PATH:$HOME/.rvm/bin
-# note that when setting PATH=$PATH is called.  This is like A=A+B so we preserve the old path
+test -d $HOME/.rvm/bin && PATH=$PATH:$HOME/.rvm/bin
 
-# git completion (commented out in case you don't have these)
-# source ~/.git-completion.bash
-# source ~/.git-prompt.sh
+# Rbenv autocomplete and shims
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# Path for RBENV
+test -d $HOME/.rbenv/ && PATH="$HOME/.rbenv/bin:$PATH"
+
+# Path changes are made non-destructive with PATH=new_path;$PATH   This is like A=A+B so we preserve the old path
 
 # Path order matters, putting /usr/local/bin: before $PATH
-# ensures brew programs will be seen and used before another program of the same name
+# ensures brew programs will be seen and used before another program
+# of the same name is called
 
 # Path for brew
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 # Path for Heroku
-export PATH="/usr/local/heroku/bin:$PATH"
+test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 # Unfuck Support
-export PATH="$PATH:$HOME/.uf/bin"
+test -d $HOME/.uf/bin && export PATH="$PATH:$HOME/.uf/bin"
+
 
 # A more colorful prompt
 # \[\e[0m\] resets the color to default color
@@ -54,27 +57,14 @@ git_prompt ()
   echo " [$git_color$git_branch${c_reset}]"
 }
 
-# Add postgres to autostart with this line from console
-# ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
-
-# Manually start postgres
-function pgstart {
-  pg_ctl -D /usr/local/var/postgres -l logfile start
-}
-
-# Manually stop postgres
-function pgstop {
-  pg_ctl -D /usr/local/var/postgres stop
-}
-
-
 # Colors ls should use for folders, files, symlinks etc, see `man ls` and
 # search for LSCOLORS
 export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
 # Force ls to use colors (G) and use humanized file sizes (h)
 alias ls='ls -Gh'
 
-# ---
+# Set sublime as the default editor
+which -s subl && export EDITOR="subl --wait"
 
 # Useful aliases
 

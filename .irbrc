@@ -1,29 +1,20 @@
-# require 'rubygems' #needed for wirble
-require 'irb/completion' # non-wirble auto-complete
-require 'pp'
-require 'wirble'
+# Auto-complete for method names and such
+require 'irb/completion'
 
-begin
-  # init wirble
-  Wirble.init
-  Wirble.colorize
-  rescue LoadError => err
-  $stderr.puts "Couldn't load Wirble: #{err}"
-end
+# Awesomeprint replaces irb's default pretty printingwith fancier formatting
+require "awesome_print"
+AwesomePrint.irb!
+
+# Loads simple IRB (without RVM notice)
+IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 
 IRB.conf[:AUTO_INDENT] = true
 IRB.conf[:USE_READLINE] = true
 
-# loads simple IRB (without RVM notice)
-IRB.conf[:PROMPT_MODE] = :SIMPLE
-
-# loads awesome_print
-require "awesome_print"
-AwesomePrint.irb!
-
+# A method for clearing the screen
 def clear
   system('clear')
 end
 
-puts ("Welcome to Ruby Console User")
+puts ("Loading ~/.irbc a file that loads everytime you load irb")
