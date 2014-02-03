@@ -43,8 +43,8 @@
     "tmp",
     "log"
   ],
-  "font_face": "Source Code Pro",
-  "font_size": 18.0,
+  "font_face": "Inconsolata",
+  "font_size": 21.0,
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "ignored_packages":
@@ -62,5 +62,6 @@
   "shift_tab_unindent": true,
   "tab_size": 2,
   "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true
+  "trim_trailing_white_space_on_save": true,
+  "word_wrap": "true"
 }
