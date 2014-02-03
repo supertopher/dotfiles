@@ -1,12 +1,17 @@
+# Any files matching the search terms in this file will be ignored by git
+
+# .DS_Store holds information about the current folder for OSX
+# such as icon placement
 .DS_Store
-.AppleDouble
-.LSOverride
-Icon
 
+# Backup files created by the vim text editor
+.swp
 
-# Thumbnails
-._*
+# *.sqlite3 are local databases.  Make your own, don't share
+*.sqlite3
 
-# Files that might appear on external disk
+# .Spotlight-V100 holds spotlight index files
 .Spotlight-V100
+
+# .Trashes holds disk specific trash folders
 .Trashes

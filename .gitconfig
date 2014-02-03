@@ -1,21 +1,39 @@
 [core]
-  editor = subl -w
+  # Excludesfiles allows us to set a global list of things to ignore
   excludesfile = ~/.gitignore_global
+
+# These are custom color options for the console
 [color]
   status = auto
   diff = auto
+
 [color "status"]
   untracked = cyan
   changed = green
   added = yellow
+
+# Aliases are command shortcuts
 [alias]
   co = checkout
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-[mergetool "sublime"]
-  cmd = subl -w $MERGED
-  trustExitCode = false
-[merge]
-  tool = sublime
-[push]
-  default = simple
+  # lg is now a shortcut for a pretty log with short commit messages
+  # See the log manpage: https://www.kernel.org/pub/software/scm/git/docs/git-log.html
+  # for explanations of what these options do
+  lg = log \
+    --graph \
+    --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+    --abbrev-commit \
+    --date=relative
+
+  # Shorthand for commit, also enforces diff display in editor before commit
+  ci = commit --verbose
+
+  # Shorthand for a less noisy status
+  s = commit --dry-run --short
+
+  # More sensible names for adding and removing files from the readme
+  stage = add
+  unstage = reset HEAD
+
+  # Edit the last commit
+  amend= commit --verbose --amend
