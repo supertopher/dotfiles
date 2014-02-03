@@ -1,21 +1,10 @@
 [
+// Rails ERB tags
 { "keys": ["ctrl+shift+."], "command": "erb" },
-  // Syntax Change
-  {"keys": ["super+shift+r"], "command": "set_file_type",
+// Change syntax to Ruby
+{"keys": ["super+shift+r"], "command": "set_file_type",
      "args": {"syntax": "Packages/Ruby/Ruby.tmLanguage"}
-},
-<!-- these keys are james's shortcuts for setting color theme -->
-{ "keys": ["ctrl+alt+super+b"], "command": "set_setting", "args":
-    {
-      "setting": "color_scheme",
-      "value": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme"
-    } },
-{ "keys": ["ctrl+alt+super+w"], "command": "set_setting", "args":
-    {
-      "setting": "color_scheme",
-      "value": "Packages/Color Scheme - Default/Solarized (Light).tmTheme"
-    } }
-
+}
 ]
 
 
