@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e # Exit on any failure
+
+cp .bash_profile      $HOME/.bash_profile
+cp .gitconfig         $HOME/.gitconfig
+cp .gitignore_global  $HOME/.gitignore_global
+cp .irbrc             $HOME/.irbrc
+cp .rspec             $HOME/.rspec
+
+test -d /Applications/Sublime\ Text\ 2.app/ && {
+  cp Prefrences.sublime-settings-user $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+  cp sublime_key_bindings $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Default\ \(OSX\).sublime-keymap
+}
+
+test -d /Applications/Sublime\ Text.app && {
+  echo "Sublime Text 3 prefs auto install not currently supported."
+}
+
+curl --silent http://levien.com/type/myfonts/Inconsolata.otf -o $HOME/Library/Fonts/Inconsolata.otf
+
+./sublimelink
