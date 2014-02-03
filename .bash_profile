@@ -49,7 +49,7 @@ export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]:> '
 # determines if the git branch you are on is clean or dirty
 git_prompt ()
 {
-  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+  if ! test -d .git; then
     return 0
   fi
   git_branch=$(Git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
