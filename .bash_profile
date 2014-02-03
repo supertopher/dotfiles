@@ -1,5 +1,6 @@
 # echo is like puts for bash (bash is the program running in your terminal)
 echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
+
 # $VARIABLE will render before the rest of the command is executed
 echo "Logged in as $USER at $(hostname)"
 
@@ -26,6 +27,9 @@ test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 # Unfuck Support
 test -d $HOME/.uf/bin && export PATH="$PATH:$HOME/.uf/bin"
 
+# Load git completions
+git_completion_script=/usr/local/etc/bash_completion.d/git-completion.bash
+test -s $git_completion_script && source $git_completion_script
 
 # A more colorful prompt
 # \[\e[0m\] resets the color to default color
