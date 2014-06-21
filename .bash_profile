@@ -75,3 +75,4 @@ which -s subl && export EDITOR="subl --wait"
 # Useful aliases
 
 alias e=subl
+alias be=bundle exec
