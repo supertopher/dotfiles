@@ -1,7 +1,7 @@
 # Auto-complete for method names and such
 require 'irb/completion'
 
-# Awesomeprint replaces irb's default pretty printingwith fancier formatting
+# Awesomeprint replaces irb's default pretty printing with fancier formatting
 require "awesome_print"
 AwesomePrint.irb!
 
@@ -10,7 +10,6 @@ IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 
 IRB.conf[:AUTO_INDENT] = true
-IRB.conf[:USE_READLINE] = true
 
 # A method for clearing the screen
 def clear
