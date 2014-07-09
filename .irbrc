@@ -17,4 +17,4 @@ def clear
   system('clear')
 end
 
-puts ("Loading ~/.irbc a file that loads everytime you load irb")
+puts ("Loading ~/.irbrc a file that loads everytime you load irb")
