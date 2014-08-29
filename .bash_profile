@@ -69,8 +69,8 @@ export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
 # Force ls to use colors (G) and use humanized file sizes (h)
 alias ls='ls -Gh'
 
-# Force grep to always use the color option
-export GREP_OPTIONS='--color=always'
+# Force grep to always use the color option and show line numbers
+export GREP_OPTIONS='--color=always --line-number'
 
 # Set sublime as the default editor
 which -s subl && export EDITOR="subl --wait"
