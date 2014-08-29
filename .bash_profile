@@ -70,7 +70,7 @@ export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
 alias ls='ls -Gh'
 
 # Force grep to always use the color option and show line numbers
-export GREP_OPTIONS='--color=always --line-number'
+export GREP_OPTIONS='--color=always'
 
 # Set sublime as the default editor
 which -s subl && export EDITOR="subl --wait"
