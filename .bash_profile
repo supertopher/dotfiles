@@ -24,8 +24,6 @@ test -d $HOME/.rbenv/ && PATH="$HOME/.rbenv/bin:$PATH"
 test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 # Path for Heroku
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
-# Unfuck Support
-test -d $HOME/.uf/bin && export PATH="$PATH:$HOME/.uf/bin"
 
 # Load git completions
 git_completion_script=/usr/local/etc/bash_completion.d/git-completion.bash
