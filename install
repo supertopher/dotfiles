@@ -21,3 +21,7 @@ test -d /Applications/Sublime\ Text.app && {
 curl --silent http://levien.com/type/myfonts/Inconsolata.otf -o $HOME/Library/Fonts/Inconsolata.otf
 
 ./sublimelink
+
+echo "Dotfiles in $USER's home directory have been replaced"
+echo "Reload shell for changes to take effect"
+echo "Please set your git user name and email again."
