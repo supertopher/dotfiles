@@ -7,16 +7,16 @@ echo "Logged in as $USER at $(hostname)"
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # Path for RVM
-test -d $HOME/.rvm/bin && PATH=$PATH:$HOME/.rvm/bin
+test -d "$HOME/.rvm/bin" && PATH="$PATH:$HOME/.rvm/bin"
 
 # Rbenv autocomplete and shims
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Path for RBENV
-test -d $HOME/.rbenv/ && PATH="$HOME/.rbenv/bin:$PATH"
+test -d "$HOME/.rbenv/" && PATH="$HOME/.rbenv/bin:$PATH"
 
 # Path changes are made non-destructive with PATH=new_path;$PATH   This is like A=A+B so we preserve the old path
 
-# Path order matters, putting /usr/local/bin: before $PATH
+# Path order matters, putting /usr/local/bin before /usr/bin
 # ensures brew programs will be seen and used before another program
 # of the same name is called
 
@@ -47,6 +47,7 @@ export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]:> '
 # determines if the git branch you are on is clean or dirty
 git_prompt ()
 {
+  # Is this a git directory?
   if ! git rev-parse --git-dir > /dev/null 2>&1; then
     return 0
   fi
@@ -75,5 +76,5 @@ which -s subl && export EDITOR="subl --wait"
 
 # Useful aliases
 
-alias e=subl
+alias e="subl"
 alias be="bundle exec"
