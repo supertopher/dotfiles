@@ -40,9 +40,12 @@ c_git_clean='\[\e[0;32m\]'
 c_git_dirty='\[\e[0;31m\]'
 
 # PS1 is the variable for the prompt you see everytime you hit enter
-PROMPT_COMMAND=$PROMPT_COMMAND' PS1="${c_path}\W${c_reset}$(git_prompt) :> "'
-
-export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]:> '
+if [ $OSTYPE == 'darwin15' ] && ! [ $ITERM_SESSION_ID ]
+then
+  PROMPT_COMMAND=$PROMPT_COMMAND'; PS1="${c_path}\W${c_reset}$(git_prompt) :> "'
+else
+  PROMPT_COMMAND=$PROMPT_COMMAND' PS1="${c_path}\W${c_reset}$(git_prompt) :> "'
+fi
 
 # determines if the git branch you are on is clean or dirty
 git_prompt ()
